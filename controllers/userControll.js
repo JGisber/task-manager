@@ -29,7 +29,7 @@ module.exports = {
 
     FETCH_userById: async(req, res, next) => {
         try {
-            let user = await User.findById(req.value.userId)
+            let user = await User.findById(req.value.params.userId)
             res.status(200).json(user)
         } catch (error) {
             next(error)

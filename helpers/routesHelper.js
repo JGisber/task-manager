@@ -4,6 +4,7 @@ module.exports = {
     validateParam: (schema, name) => {
         return (req, res, next) => {
             let result = Joi.validate({param: req['params'][name]}, schema);
+            console.log("result:", result)
             if(result.error){
                 return res.status(400).json(result.error)
             } else {
